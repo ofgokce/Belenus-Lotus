@@ -1,0 +1,985 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		140F3B9C2655C5340004A49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F3B9B2655C5340004A49F /* AppDelegate.swift */; };
+		140F3B9E2655C5340004A49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F3B9D2655C5340004A49F /* SceneDelegate.swift */; };
+		140F3BA62655C5340004A49F /* Belenus_Lotus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 140F3BA42655C5340004A49F /* Belenus_Lotus.xcdatamodeld */; };
+		140F3BA82655C5370004A49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140F3BA72655C5370004A49F /* Assets.xcassets */; };
+		140F3BAB2655C5370004A49F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140F3BA92655C5370004A49F /* LaunchScreen.storyboard */; };
+		140F3BB62655C5380004A49F /* Belenus_LotusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F3BB52655C5380004A49F /* Belenus_LotusTests.swift */; };
+		140F3BC12655C5380004A49F /* Belenus_LotusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F3BC02655C5380004A49F /* Belenus_LotusUITests.swift */; };
+		140F3BDD2655DE400004A49F /* RestfulManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F3BDC2655DE400004A49F /* RestfulManager.swift */; };
+		143A6FB52657F4E20006445F /* TMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FB42657F4E20006445F /* TMDBManager.swift */; };
+		143A6FBA26580DB40006445F /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FB926580DB40006445F /* Series.swift */; };
+		143A6FC8265845720006445F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FC7265845720006445F /* Movie.swift */; };
+		143A6FD02658458E0006445F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FCF2658458E0006445F /* Genre.swift */; };
+		143A6FD5265845BA0006445F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FD4265845BA0006445F /* Company.swift */; };
+		143A6FDA265846090006445F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FD9265846090006445F /* Country.swift */; };
+		143A6FDF2658471A0006445F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A6FDE2658471A0006445F /* Person.swift */; };
+		143A702C265A9ED50006445F /* CellGenerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A702B265A9ED50006445F /* CellGenerics.swift */; };
+		143A703A265AA67F0006445F /* MoviesMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A7039265AA67F0006445F /* MoviesMediator.swift */; };
+		143A703F265AA68D0006445F /* SeriesMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A703E265AA68D0006445F /* SeriesMediator.swift */; };
+		143A704C265AD1060006445F /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A704B265AD1060006445F /* Base.swift */; };
+		143A7054265AD1BF0006445F /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A7053265AD1BF0006445F /* Providers.swift */; };
+		143A7060265AF0090006445F /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A705E265AF0090006445F /* MoviesViewController.swift */; };
+		143A7061265AF0090006445F /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 143A705F265AF0090006445F /* MoviesViewController.xib */; };
+		143A7071265AF0ED0006445F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A706F265AF0ED0006445F /* ImageCollectionViewCell.swift */; };
+		143A7072265AF0ED0006445F /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 143A7070265AF0ED0006445F /* ImageCollectionViewCell.xib */; };
+		143A7077265AFA830006445F /* KingFisherExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A7076265AFA830006445F /* KingFisherExt.swift */; };
+		143A707C265B00AE0006445F /* AnyMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A707B265B00AE0006445F /* AnyMedia.swift */; };
+		143A7089265B16E80006445F /* GenresMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A7088265B16E80006445F /* GenresMediator.swift */; };
+		143A70E5265C35B40006445F /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A70E4265C35B40006445F /* MoviesViewModel.swift */; };
+		143A70EA265C39060006445F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A70E9265C39060006445F /* TabBarController.swift */; };
+		143A70EF265C3C6A0006445F /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A70EE265C3C6A0006445F /* Instantiatable.swift */; };
+		143A70FD265D7BC00006445F /* ImagesMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A70FC265D7BC00006445F /* ImagesMediator.swift */; };
+		143A7102265D94360006445F /* GenreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A7101265D94360006445F /* GenreButton.swift */; };
+		1447833E2665A2C000C55E97 /* SeriesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447833D2665A2C000C55E97 /* SeriesDetailViewModel.swift */; };
+		144783462665A4A100C55E97 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144783452665A4A100C55E97 /* GradientView.swift */; };
+		1447835D2666D6E200C55E97 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447835B2666D6E200C55E97 /* MovieDetailViewController.swift */; };
+		1447835E2666D6E200C55E97 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1447835C2666D6E200C55E97 /* MovieDetailViewController.xib */; };
+		144783632666D6F500C55E97 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144783622666D6F500C55E97 /* MovieDetailViewModel.swift */; };
+		147086AF265FDD8200177D59 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147086AE265FDD8200177D59 /* SeriesViewController.swift */; };
+		147086B7265FDDAC00177D59 /* SeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147086B6265FDDAC00177D59 /* SeriesViewModel.swift */; };
+		147086C4265FE10D00177D59 /* MediaCollectionMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147086C3265FE10D00177D59 /* MediaCollectionMediator.swift */; };
+		1482EC71265FE8070016715E /* SeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1482EC70265FE8070016715E /* SeriesViewController.xib */; };
+		14FB4D182660410600656528 /* SeriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB4D162660410600656528 /* SeriesDetailViewController.swift */; };
+		14FB4D192660410600656528 /* SeriesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FB4D172660410600656528 /* SeriesDetailViewController.xib */; };
+		14FB4D412661B8BE00656528 /* ImageCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB4D3F2661B8BE00656528 /* ImageCollectionTableViewCell.swift */; };
+		14FB4D422661B8BE00656528 /* ImageCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FB4D402661B8BE00656528 /* ImageCollectionTableViewCell.xib */; };
+		5FACDD932F45D4040DB5F6D7 /* Pods_Belenus_Lotus_Belenus_LotusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E30F9208C2C766F989C8911 /* Pods_Belenus_Lotus_Belenus_LotusUITests.framework */; };
+		61F1FD3EC068D1CA35862F8A /* Pods_Belenus_Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5061F48CF3A73F4D3E6E3 /* Pods_Belenus_Lotus.framework */; };
+		BD6A3B6F3AA87C700C73FB60 /* Pods_Belenus_LotusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405DFF488CF23567C85B9792 /* Pods_Belenus_LotusTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		140F3BB22655C5380004A49F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 140F3B902655C5330004A49F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 140F3B972655C5340004A49F;
+			remoteInfo = "Belenus Lotus";
+		};
+		140F3BBD2655C5380004A49F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 140F3B902655C5330004A49F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 140F3B972655C5340004A49F;
+			remoteInfo = "Belenus Lotus";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F15C37F957358E50ED7DE12 /* Pods-Belenus LotusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus LotusTests.debug.xcconfig"; path = "Target Support Files/Pods-Belenus LotusTests/Pods-Belenus LotusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1069FAE6FE6A4D65766DF3C1 /* Pods-Belenus Lotus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus Lotus.debug.xcconfig"; path = "Target Support Files/Pods-Belenus Lotus/Pods-Belenus Lotus.debug.xcconfig"; sourceTree = "<group>"; };
+		140F3B982655C5340004A49F /* Belenus Lotus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Belenus Lotus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		140F3B9B2655C5340004A49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		140F3B9D2655C5340004A49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		140F3BA52655C5340004A49F /* Belenus_Lotus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Belenus_Lotus.xcdatamodel; sourceTree = "<group>"; };
+		140F3BA72655C5370004A49F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		140F3BAA2655C5370004A49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		140F3BAC2655C5380004A49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		140F3BB12655C5380004A49F /* Belenus LotusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Belenus LotusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		140F3BB52655C5380004A49F /* Belenus_LotusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Belenus_LotusTests.swift; sourceTree = "<group>"; };
+		140F3BB72655C5380004A49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		140F3BBC2655C5380004A49F /* Belenus LotusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Belenus LotusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		140F3BC02655C5380004A49F /* Belenus_LotusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Belenus_LotusUITests.swift; sourceTree = "<group>"; };
+		140F3BC22655C5380004A49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		140F3BDC2655DE400004A49F /* RestfulManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulManager.swift; sourceTree = "<group>"; };
+		143A6FB42657F4E20006445F /* TMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBManager.swift; sourceTree = "<group>"; };
+		143A6FB926580DB40006445F /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		143A6FC7265845720006445F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		143A6FCF2658458E0006445F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		143A6FD4265845BA0006445F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		143A6FD9265846090006445F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		143A6FDE2658471A0006445F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		143A702B265A9ED50006445F /* CellGenerics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGenerics.swift; sourceTree = "<group>"; };
+		143A7039265AA67F0006445F /* MoviesMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesMediator.swift; sourceTree = "<group>"; };
+		143A703E265AA68D0006445F /* SeriesMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesMediator.swift; sourceTree = "<group>"; };
+		143A704B265AD1060006445F /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		143A7053265AD1BF0006445F /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
+		143A705E265AF0090006445F /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		143A705F265AF0090006445F /* MoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		143A706F265AF0ED0006445F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		143A7070265AF0ED0006445F /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		143A7076265AFA830006445F /* KingFisherExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherExt.swift; sourceTree = "<group>"; };
+		143A707B265B00AE0006445F /* AnyMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyMedia.swift; sourceTree = "<group>"; };
+		143A7088265B16E80006445F /* GenresMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresMediator.swift; sourceTree = "<group>"; };
+		143A70E4265C35B40006445F /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		143A70E9265C39060006445F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		143A70EE265C3C6A0006445F /* Instantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
+		143A70FC265D7BC00006445F /* ImagesMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesMediator.swift; sourceTree = "<group>"; };
+		143A7101265D94360006445F /* GenreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreButton.swift; sourceTree = "<group>"; };
+		1447833D2665A2C000C55E97 /* SeriesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailViewModel.swift; sourceTree = "<group>"; };
+		144783452665A4A100C55E97 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		1447835B2666D6E200C55E97 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		1447835C2666D6E200C55E97 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		144783622666D6F500C55E97 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		147086AE265FDD8200177D59 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		147086B6265FDDAC00177D59 /* SeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewModel.swift; sourceTree = "<group>"; };
+		147086C3265FE10D00177D59 /* MediaCollectionMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionMediator.swift; sourceTree = "<group>"; };
+		1482EC70265FE8070016715E /* SeriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesViewController.xib; sourceTree = "<group>"; };
+		14FB4D162660410600656528 /* SeriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailViewController.swift; sourceTree = "<group>"; };
+		14FB4D172660410600656528 /* SeriesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesDetailViewController.xib; sourceTree = "<group>"; };
+		14FB4D3F2661B8BE00656528 /* ImageCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		14FB4D402661B8BE00656528 /* ImageCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		2FF870F6F52E88588AC59468 /* Pods-Belenus Lotus-Belenus LotusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus Lotus-Belenus LotusUITests.release.xcconfig"; path = "Target Support Files/Pods-Belenus Lotus-Belenus LotusUITests/Pods-Belenus Lotus-Belenus LotusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3923FA895EAACFF602E98E41 /* Pods-Belenus LotusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus LotusTests.release.xcconfig"; path = "Target Support Files/Pods-Belenus LotusTests/Pods-Belenus LotusTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E30F9208C2C766F989C8911 /* Pods_Belenus_Lotus_Belenus_LotusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Belenus_Lotus_Belenus_LotusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		405DFF488CF23567C85B9792 /* Pods_Belenus_LotusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Belenus_LotusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A5061F48CF3A73F4D3E6E3 /* Pods_Belenus_Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Belenus_Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65BBFF4DCB4D07352EF5EF70 /* Pods-Belenus Lotus-Belenus LotusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus Lotus-Belenus LotusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Belenus Lotus-Belenus LotusUITests/Pods-Belenus Lotus-Belenus LotusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB85D5B79817428482190B0E /* Pods-Belenus Lotus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belenus Lotus.release.xcconfig"; path = "Target Support Files/Pods-Belenus Lotus/Pods-Belenus Lotus.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		140F3B952655C5340004A49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61F1FD3EC068D1CA35862F8A /* Pods_Belenus_Lotus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BAE2655C5380004A49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD6A3B6F3AA87C700C73FB60 /* Pods_Belenus_LotusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BB92655C5380004A49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FACDD932F45D4040DB5F6D7 /* Pods_Belenus_Lotus_Belenus_LotusUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		140F3B8F2655C5330004A49F = {
+			isa = PBXGroup;
+			children = (
+				140F3B9A2655C5340004A49F /* Belenus Lotus */,
+				140F3BB42655C5380004A49F /* Belenus LotusTests */,
+				140F3BBF2655C5380004A49F /* Belenus LotusUITests */,
+				140F3B992655C5340004A49F /* Products */,
+				92A2D15FABDFE28E80950711 /* Pods */,
+				E13481B8485020E685FAD4DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		140F3B992655C5340004A49F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				140F3B982655C5340004A49F /* Belenus Lotus.app */,
+				140F3BB12655C5380004A49F /* Belenus LotusTests.xctest */,
+				140F3BBC2655C5380004A49F /* Belenus LotusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		140F3B9A2655C5340004A49F /* Belenus Lotus */ = {
+			isa = PBXGroup;
+			children = (
+				140F3B9B2655C5340004A49F /* AppDelegate.swift */,
+				140F3B9D2655C5340004A49F /* SceneDelegate.swift */,
+				140F3BD42655D14D0004A49F /* UI */,
+				140F3BD32655D1450004A49F /* Mediators */,
+				140F3BD22655D13D0004A49F /* Managers */,
+				140F3BD12655D1340004A49F /* Models */,
+				140F3BD52655D1560004A49F /* Toolkit */,
+				140F3BA72655C5370004A49F /* Assets.xcassets */,
+				140F3BA92655C5370004A49F /* LaunchScreen.storyboard */,
+				140F3BAC2655C5380004A49F /* Info.plist */,
+				140F3BA42655C5340004A49F /* Belenus_Lotus.xcdatamodeld */,
+			);
+			path = "Belenus Lotus";
+			sourceTree = "<group>";
+		};
+		140F3BB42655C5380004A49F /* Belenus LotusTests */ = {
+			isa = PBXGroup;
+			children = (
+				140F3BB52655C5380004A49F /* Belenus_LotusTests.swift */,
+				140F3BB72655C5380004A49F /* Info.plist */,
+			);
+			path = "Belenus LotusTests";
+			sourceTree = "<group>";
+		};
+		140F3BBF2655C5380004A49F /* Belenus LotusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				140F3BC02655C5380004A49F /* Belenus_LotusUITests.swift */,
+				140F3BC22655C5380004A49F /* Info.plist */,
+			);
+			path = "Belenus LotusUITests";
+			sourceTree = "<group>";
+		};
+		140F3BD12655D1340004A49F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				143A704B265AD1060006445F /* Base.swift */,
+				143A707B265B00AE0006445F /* AnyMedia.swift */,
+				143A6FC7265845720006445F /* Movie.swift */,
+				143A6FB926580DB40006445F /* Series.swift */,
+				143A6FCF2658458E0006445F /* Genre.swift */,
+				143A6FDE2658471A0006445F /* Person.swift */,
+				143A6FD9265846090006445F /* Country.swift */,
+				143A6FD4265845BA0006445F /* Company.swift */,
+				143A7053265AD1BF0006445F /* Providers.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		140F3BD22655D13D0004A49F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				140F3BDC2655DE400004A49F /* RestfulManager.swift */,
+				143A6FB42657F4E20006445F /* TMDBManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		140F3BD32655D1450004A49F /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				147086C3265FE10D00177D59 /* MediaCollectionMediator.swift */,
+				143A7039265AA67F0006445F /* MoviesMediator.swift */,
+				143A703E265AA68D0006445F /* SeriesMediator.swift */,
+				143A7088265B16E80006445F /* GenresMediator.swift */,
+				143A70FC265D7BC00006445F /* ImagesMediator.swift */,
+			);
+			path = Mediators;
+			sourceTree = "<group>";
+		};
+		140F3BD42655D14D0004A49F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				143A70E9265C39060006445F /* TabBarController.swift */,
+				143A7023265A9D6F0006445F /* Movies */,
+				143081A7265F1A38002538DD /* Series */,
+				14FB4D4C2661BE6B00656528 /* Commons */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		140F3BD52655D1560004A49F /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				143A70EE265C3C6A0006445F /* Instantiatable.swift */,
+				143A702B265A9ED50006445F /* CellGenerics.swift */,
+				143A7076265AFA830006445F /* KingFisherExt.swift */,
+			);
+			path = Toolkit;
+			sourceTree = "<group>";
+		};
+		143081A7265F1A38002538DD /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				1482EC70265FE8070016715E /* SeriesViewController.xib */,
+				147086AE265FDD8200177D59 /* SeriesViewController.swift */,
+				147086B6265FDDAC00177D59 /* SeriesViewModel.swift */,
+				14FB4D15266040E000656528 /* SeriesDetail */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		143A7023265A9D6F0006445F /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				143A705F265AF0090006445F /* MoviesViewController.xib */,
+				143A705E265AF0090006445F /* MoviesViewController.swift */,
+				143A70E4265C35B40006445F /* MoviesViewModel.swift */,
+				1447834D2666C27C00C55E97 /* MoviesDetail */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		1447834D2666C27C00C55E97 /* MoviesDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1447835C2666D6E200C55E97 /* MovieDetailViewController.xib */,
+				1447835B2666D6E200C55E97 /* MovieDetailViewController.swift */,
+				144783622666D6F500C55E97 /* MovieDetailViewModel.swift */,
+			);
+			path = MoviesDetail;
+			sourceTree = "<group>";
+		};
+		14FB4D15266040E000656528 /* SeriesDetail */ = {
+			isa = PBXGroup;
+			children = (
+				14FB4D172660410600656528 /* SeriesDetailViewController.xib */,
+				14FB4D162660410600656528 /* SeriesDetailViewController.swift */,
+				1447833D2665A2C000C55E97 /* SeriesDetailViewModel.swift */,
+			);
+			path = SeriesDetail;
+			sourceTree = "<group>";
+		};
+		14FB4D4C2661BE6B00656528 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				143A7101265D94360006445F /* GenreButton.swift */,
+				144783452665A4A100C55E97 /* GradientView.swift */,
+				143A706F265AF0ED0006445F /* ImageCollectionViewCell.swift */,
+				143A7070265AF0ED0006445F /* ImageCollectionViewCell.xib */,
+				14FB4D3F2661B8BE00656528 /* ImageCollectionTableViewCell.swift */,
+				14FB4D402661B8BE00656528 /* ImageCollectionTableViewCell.xib */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		92A2D15FABDFE28E80950711 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1069FAE6FE6A4D65766DF3C1 /* Pods-Belenus Lotus.debug.xcconfig */,
+				DB85D5B79817428482190B0E /* Pods-Belenus Lotus.release.xcconfig */,
+				65BBFF4DCB4D07352EF5EF70 /* Pods-Belenus Lotus-Belenus LotusUITests.debug.xcconfig */,
+				2FF870F6F52E88588AC59468 /* Pods-Belenus Lotus-Belenus LotusUITests.release.xcconfig */,
+				0F15C37F957358E50ED7DE12 /* Pods-Belenus LotusTests.debug.xcconfig */,
+				3923FA895EAACFF602E98E41 /* Pods-Belenus LotusTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E13481B8485020E685FAD4DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54A5061F48CF3A73F4D3E6E3 /* Pods_Belenus_Lotus.framework */,
+				3E30F9208C2C766F989C8911 /* Pods_Belenus_Lotus_Belenus_LotusUITests.framework */,
+				405DFF488CF23567C85B9792 /* Pods_Belenus_LotusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		140F3B972655C5340004A49F /* Belenus Lotus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 140F3BC52655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus Lotus" */;
+			buildPhases = (
+				16BFC6B5FB52A26D47CEB267 /* [CP] Check Pods Manifest.lock */,
+				140F3B942655C5340004A49F /* Sources */,
+				140F3B952655C5340004A49F /* Frameworks */,
+				140F3B962655C5340004A49F /* Resources */,
+				5D8BF9113F5AFA63D16BC624 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Belenus Lotus";
+			productName = "Belenus Lotus";
+			productReference = 140F3B982655C5340004A49F /* Belenus Lotus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		140F3BB02655C5380004A49F /* Belenus LotusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 140F3BC82655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus LotusTests" */;
+			buildPhases = (
+				B6A2159D50A1432C03C173F4 /* [CP] Check Pods Manifest.lock */,
+				140F3BAD2655C5380004A49F /* Sources */,
+				140F3BAE2655C5380004A49F /* Frameworks */,
+				140F3BAF2655C5380004A49F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				140F3BB32655C5380004A49F /* PBXTargetDependency */,
+			);
+			name = "Belenus LotusTests";
+			productName = "Belenus LotusTests";
+			productReference = 140F3BB12655C5380004A49F /* Belenus LotusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		140F3BBB2655C5380004A49F /* Belenus LotusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 140F3BCB2655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus LotusUITests" */;
+			buildPhases = (
+				8F51849B6B7021779B7E8D9D /* [CP] Check Pods Manifest.lock */,
+				140F3BB82655C5380004A49F /* Sources */,
+				140F3BB92655C5380004A49F /* Frameworks */,
+				140F3BBA2655C5380004A49F /* Resources */,
+				F1C86E0AF04C5C36E27C9224 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				140F3BBE2655C5380004A49F /* PBXTargetDependency */,
+			);
+			name = "Belenus LotusUITests";
+			productName = "Belenus LotusUITests";
+			productReference = 140F3BBC2655C5380004A49F /* Belenus LotusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		140F3B902655C5330004A49F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					140F3B972655C5340004A49F = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					140F3BB02655C5380004A49F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 140F3B972655C5340004A49F;
+					};
+					140F3BBB2655C5380004A49F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 140F3B972655C5340004A49F;
+					};
+				};
+			};
+			buildConfigurationList = 140F3B932655C5330004A49F /* Build configuration list for PBXProject "Belenus Lotus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 140F3B8F2655C5330004A49F;
+			productRefGroup = 140F3B992655C5340004A49F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				140F3B972655C5340004A49F /* Belenus Lotus */,
+				140F3BB02655C5380004A49F /* Belenus LotusTests */,
+				140F3BBB2655C5380004A49F /* Belenus LotusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		140F3B962655C5340004A49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1447835E2666D6E200C55E97 /* MovieDetailViewController.xib in Resources */,
+				14FB4D422661B8BE00656528 /* ImageCollectionTableViewCell.xib in Resources */,
+				140F3BAB2655C5370004A49F /* LaunchScreen.storyboard in Resources */,
+				1482EC71265FE8070016715E /* SeriesViewController.xib in Resources */,
+				143A7072265AF0ED0006445F /* ImageCollectionViewCell.xib in Resources */,
+				140F3BA82655C5370004A49F /* Assets.xcassets in Resources */,
+				14FB4D192660410600656528 /* SeriesDetailViewController.xib in Resources */,
+				143A7061265AF0090006445F /* MoviesViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BAF2655C5380004A49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BBA2655C5380004A49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16BFC6B5FB52A26D47CEB267 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Belenus Lotus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D8BF9113F5AFA63D16BC624 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus/Pods-Belenus Lotus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus/Pods-Belenus Lotus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus/Pods-Belenus Lotus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F51849B6B7021779B7E8D9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Belenus Lotus-Belenus LotusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6A2159D50A1432C03C173F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Belenus LotusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1C86E0AF04C5C36E27C9224 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus-Belenus LotusUITests/Pods-Belenus Lotus-Belenus LotusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus-Belenus LotusUITests/Pods-Belenus Lotus-Belenus LotusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Belenus Lotus-Belenus LotusUITests/Pods-Belenus Lotus-Belenus LotusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		140F3B942655C5340004A49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1447833E2665A2C000C55E97 /* SeriesDetailViewModel.swift in Sources */,
+				143A7054265AD1BF0006445F /* Providers.swift in Sources */,
+				144783462665A4A100C55E97 /* GradientView.swift in Sources */,
+				143A70EA265C39060006445F /* TabBarController.swift in Sources */,
+				143A702C265A9ED50006445F /* CellGenerics.swift in Sources */,
+				140F3B9C2655C5340004A49F /* AppDelegate.swift in Sources */,
+				1447835D2666D6E200C55E97 /* MovieDetailViewController.swift in Sources */,
+				140F3BA62655C5340004A49F /* Belenus_Lotus.xcdatamodeld in Sources */,
+				143A6FC8265845720006445F /* Movie.swift in Sources */,
+				140F3B9E2655C5340004A49F /* SceneDelegate.swift in Sources */,
+				143A6FDA265846090006445F /* Country.swift in Sources */,
+				147086B7265FDDAC00177D59 /* SeriesViewModel.swift in Sources */,
+				143A6FBA26580DB40006445F /* Series.swift in Sources */,
+				143A7060265AF0090006445F /* MoviesViewController.swift in Sources */,
+				143A7089265B16E80006445F /* GenresMediator.swift in Sources */,
+				143A6FB52657F4E20006445F /* TMDBManager.swift in Sources */,
+				143A7102265D94360006445F /* GenreButton.swift in Sources */,
+				14FB4D182660410600656528 /* SeriesDetailViewController.swift in Sources */,
+				143A704C265AD1060006445F /* Base.swift in Sources */,
+				143A703A265AA67F0006445F /* MoviesMediator.swift in Sources */,
+				143A6FD5265845BA0006445F /* Company.swift in Sources */,
+				147086C4265FE10D00177D59 /* MediaCollectionMediator.swift in Sources */,
+				143A6FDF2658471A0006445F /* Person.swift in Sources */,
+				143A7077265AFA830006445F /* KingFisherExt.swift in Sources */,
+				140F3BDD2655DE400004A49F /* RestfulManager.swift in Sources */,
+				143A707C265B00AE0006445F /* AnyMedia.swift in Sources */,
+				144783632666D6F500C55E97 /* MovieDetailViewModel.swift in Sources */,
+				143A6FD02658458E0006445F /* Genre.swift in Sources */,
+				143A703F265AA68D0006445F /* SeriesMediator.swift in Sources */,
+				147086AF265FDD8200177D59 /* SeriesViewController.swift in Sources */,
+				143A7071265AF0ED0006445F /* ImageCollectionViewCell.swift in Sources */,
+				143A70E5265C35B40006445F /* MoviesViewModel.swift in Sources */,
+				143A70FD265D7BC00006445F /* ImagesMediator.swift in Sources */,
+				143A70EF265C3C6A0006445F /* Instantiatable.swift in Sources */,
+				14FB4D412661B8BE00656528 /* ImageCollectionTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BAD2655C5380004A49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140F3BB62655C5380004A49F /* Belenus_LotusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		140F3BB82655C5380004A49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140F3BC12655C5380004A49F /* Belenus_LotusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		140F3BB32655C5380004A49F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 140F3B972655C5340004A49F /* Belenus Lotus */;
+			targetProxy = 140F3BB22655C5380004A49F /* PBXContainerItemProxy */;
+		};
+		140F3BBE2655C5380004A49F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 140F3B972655C5340004A49F /* Belenus Lotus */;
+			targetProxy = 140F3BBD2655C5380004A49F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		140F3BA92655C5370004A49F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				140F3BAA2655C5370004A49F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		140F3BC32655C5380004A49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		140F3BC42655C5380004A49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		140F3BC62655C5380004A49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1069FAE6FE6A4D65766DF3C1 /* Pods-Belenus Lotus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus Lotus/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-Lotus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		140F3BC72655C5380004A49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB85D5B79817428482190B0E /* Pods-Belenus Lotus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus Lotus/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-Lotus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		140F3BC92655C5380004A49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F15C37F957358E50ED7DE12 /* Pods-Belenus LotusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus LotusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-LotusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Belenus Lotus.app/Belenus Lotus";
+			};
+			name = Debug;
+		};
+		140F3BCA2655C5380004A49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3923FA895EAACFF602E98E41 /* Pods-Belenus LotusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus LotusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-LotusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Belenus Lotus.app/Belenus Lotus";
+			};
+			name = Release;
+		};
+		140F3BCC2655C5380004A49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65BBFF4DCB4D07352EF5EF70 /* Pods-Belenus Lotus-Belenus LotusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus LotusUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-LotusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Belenus Lotus";
+			};
+			name = Debug;
+		};
+		140F3BCD2655C5380004A49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FF870F6F52E88588AC59468 /* Pods-Belenus Lotus-Belenus LotusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2W43LZ6NH7;
+				INFOPLIST_FILE = "Belenus LotusUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ofgokce.Belenus-LotusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Belenus Lotus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		140F3B932655C5330004A49F /* Build configuration list for PBXProject "Belenus Lotus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140F3BC32655C5380004A49F /* Debug */,
+				140F3BC42655C5380004A49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		140F3BC52655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus Lotus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140F3BC62655C5380004A49F /* Debug */,
+				140F3BC72655C5380004A49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		140F3BC82655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus LotusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140F3BC92655C5380004A49F /* Debug */,
+				140F3BCA2655C5380004A49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		140F3BCB2655C5380004A49F /* Build configuration list for PBXNativeTarget "Belenus LotusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140F3BCC2655C5380004A49F /* Debug */,
+				140F3BCD2655C5380004A49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		140F3BA42655C5340004A49F /* Belenus_Lotus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				140F3BA52655C5340004A49F /* Belenus_Lotus.xcdatamodel */,
+			);
+			currentVersion = 140F3BA52655C5340004A49F /* Belenus_Lotus.xcdatamodel */;
+			path = Belenus_Lotus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 140F3B902655C5330004A49F /* Project object */;
+}
