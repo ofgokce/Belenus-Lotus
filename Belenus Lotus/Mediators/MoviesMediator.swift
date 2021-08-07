@@ -11,9 +11,15 @@ class MoviesMediator: MediaCollectionMediator<Movie> {
     
     private var movie: Movie?
     
-    func getMovie(withId id: Int, completion: @escaping (Result<Movie, Error>) -> Void) {
-        self.fetchMovie(id, completion: completion)
+    override func getMedia(withId id: Int, completion: @escaping (Result<AnyMedia, Error>) -> Void) {
+        self.fetchMovie(id) { result in
+            switch result {
+            case .success(let movie): completion(.success(movie))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
     }
+    
     private func fetchMovie(_ id: Int, completion: @escaping (Result<Movie, Error>) -> Void) {
         TMDBManager.shared.request(.init(medium: .movie, request: .details(id: id))) { [self] (result: Result<Movie, Error>) in
             switch result {

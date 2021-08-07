@@ -11,7 +11,7 @@ class TMDBManager {
     static let shared = TMDBManager()
     private init() {}
     
-    private let key = "API_KEY" // Bu anahtar TMDb'nin gizlilik politikaları gereğince saklanmıştır.
+    private let key = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTdkYmI3Yjg2NzgwZWYxM2U1YmJiZmYwNzIyOGMxOSIsInN1YiI6IjYwYTQxODEwOWE5ZTIwMDA1ODA5NDQ0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BnIWNbSewbppxbzE5AXSzJv5UgtVviNb2_HcguE47W8" // Bu anahtar TMDb'nin gizlilik politikaları gereğince saklanmıştır.
     
     func request<T: Codable>(_ request: API, completion: @escaping (Result<T, Error>) -> Void) {
         var urlRequest = URLRequest(url: request.url)

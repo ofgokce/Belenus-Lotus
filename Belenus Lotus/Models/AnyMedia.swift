@@ -17,6 +17,7 @@ protocol AnyMedia: Codable {
     var genres: [Genre]? { get }
     var credits: Credits? { get }
     var overview: String? { get }
+    var releaseDate: String? { get }
     var runtime: Int? { get }
     var posterPath: String? { get }
     var backdropPath: String? { get }

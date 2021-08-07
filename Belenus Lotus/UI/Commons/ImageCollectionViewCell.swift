@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import Kingfisher
 
 class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var poster: UIImageView!
     var imagePath: String = "" {
         didSet {
-            poster.kf.setImage(with: ImagesMediator().getPosterUrl(for: imagePath))
+            poster.load(fromUrl: ImagesMediator().getPosterUrl(for: imagePath))
         }
     }
 }

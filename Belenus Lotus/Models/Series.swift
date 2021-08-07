@@ -6,6 +6,7 @@
 //
 
 struct Series: AnyMedia, Codable {
+    
     let id: Int?
     let title: String?
     let originalTitle: String?
@@ -15,6 +16,7 @@ struct Series: AnyMedia, Codable {
     let genres: [Genre]?
     var credits: Credits?
     let overview: String?
+    var releaseDate: String? { return firstAirDate }
     var runtime: Int? { return episodeRunTime?.first }
     let posterPath: String?
     let backdropPath: String?

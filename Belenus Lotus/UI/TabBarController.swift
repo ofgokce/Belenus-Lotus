@@ -14,8 +14,8 @@ class TabBarController: UITabBarController {
         self.tabBar.tintColor = .black
         self.tabBar.isTranslucent = true
         
-        let movies = MoviesViewController.create()
-        let series = SeriesViewController.create()
+        let movies = MediaCollectionViewController.create(for: .movies)
+        let series = MediaCollectionViewController.create(for: .series)
         
         self.viewControllers = [movies, series]
     }

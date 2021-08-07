@@ -1,5 +1,5 @@
 //
-//  SeriesDetailViewModel.swift
+//  MovieDetailViewModel.swift
 //  Belenus Lotus
 //
 //  Created by Ömer Faruk Gökce on 1.06.2021.
@@ -8,21 +8,22 @@
 import Foundation
 import UIKit
 
-extension SeriesDetailViewController {
-    struct ViewModel {
-        
+extension MediaDetailViewController {
+    class ViewModel {
         enum SectionData {
             case textBased(cells: [(text: String, detail: String?)])
             case imageBased(cellData: [(id: Int?, imagePath: String)])
         }
         
+        private let mediator: AnyMediaCollectionMediator
+        
         private(set) var tableViewData: [(title: String, data: SectionData)] = []
         
-        let backdropPath: String
-        let tagline: String
+        var backdropPath: String = ""
+        var tagline: String = ""
         
-        private let title: String
-        private let year: String
+        private var title: String = ""
+        private var year: String = ""
         var titleAttributed: NSAttributedString {
             let title = NSMutableAttributedString(string: self.title + " ", attributes: [.font : UIFont.systemFont(ofSize: 22, weight: .semibold)])
             let year = NSAttributedString(string: "(\(self.year))", attributes: [.font : UIFont.systemFont(ofSize: 22, weight: .light)])
@@ -30,15 +31,49 @@ extension SeriesDetailViewController {
             return title
         }
         
-        init(with data: Series) {
+        init(withMovieId id: Int, dataHandler: @escaping () -> Void, errorHandler: @escaping (String) -> Void) {
+            mediator = MoviesMediator()
+            fetchData(withId: id, dataHandler: dataHandler, errorHandler: errorHandler)
+        }
+        
+        init(withSeriesId id: Int, dataHandler: @escaping () -> Void, errorHandler: @escaping (String) -> Void) {
+            mediator = SeriesMediator()
+            fetchData(withId: id, dataHandler: dataHandler, errorHandler: errorHandler)
+        }
+        
+        func getImageSize(forScreenWidth screenWidth: Double) -> (width: Double, height: Double) {
+            let width = (screenWidth - 30) / 2
+            let height = width * (3/2)
+            return (width, height)
+        }
+        
+        private func fetchData(withId id: Int, dataHandler: @escaping () -> Void, errorHandler: @escaping (String) -> Void) {
+            mediator.getMedia(withId: id) { [weak self] (result) in
+            switch result {
+            case .success(let movie):
+                self?.setup(with: movie)
+                dataHandler()
+                self?.mediator.setCollectionType(to: .recommended(forMovieWithId: id)) { (result) in
+                    if case .success(let recommended) = result {
+                        self?.updateRecommended(with: recommended)
+                        dataHandler()
+                    }
+                }
+            case .failure(let error):
+                errorHandler(error.localizedDescription)
+            }
+        }
+        }
+        
+        private func setup(with data: AnyMedia) {
             backdropPath = data.backdropPath ?? ""
             title = data.title ?? ""
-            year = String(data.firstAirDate?.prefix(4) ?? "")
+            year = String(data.releaseDate?.prefix(4) ?? "")
             tagline = data.tagline ?? ""
             tableViewData = cellData(from: data)
         }
         
-        mutating func updateRecommended(with recommended: [Series]) {
+        private func updateRecommended(with recommended: [AnyMedia]) {
             if let index = tableViewData.firstIndex(where: {$0.title == "Recommended Also"}) {
                 tableViewData[index] = cellData(forRecommended: recommended)
             } else {
@@ -46,10 +81,20 @@ extension SeriesDetailViewController {
             }
         }
         
-        func getImageSize(forScreenWidth screenWidth: Double) -> (width: Double, height: Double) {
-            let width = (screenWidth - 30) / 2
-            let height = width * (3/2)
-            return (width, height)
+        private func cellData(from data: AnyMedia) -> [(title: String, data: SectionData)] {
+            switch type(of: data) {
+            case is Movie.Type: return cellData(from: data as! Movie)
+            case is Series.Type: return cellData(from: data as! Series)
+            default: return []
+            }
+        }
+        
+        private func cellData(from data: Movie) -> [(title: String, data: SectionData)] {
+            var sections: [(title: String, data: SectionData)] = []
+            if let overview = cellData(forOverview: data.overview ?? "") { sections.append(overview) }
+            if let cast = cellData(forCast: data.credits?.cast ?? []) { sections.append(cast) }
+            if let crew = cellData(forCrew: data.credits?.crew ?? []) { sections.append(crew) }
+            return sections
         }
         
         private func cellData(from data: Series) -> [(title: String, data: SectionData)] {
@@ -115,7 +160,7 @@ extension SeriesDetailViewController {
             return seasonData
         }
         
-        private func cellData(forRecommended recommended: [Series]) -> (title: String, data: SectionData) {
+        private func cellData(forRecommended recommended: [AnyMedia]) -> (title: String, data: SectionData) {
             var recommendedData: [(id: Int?, imagePath: String)] = []
             for item in recommended where item.id != nil && item.posterPath != nil {
                 recommendedData.append((id: item.id, imagePath: item.posterPath!))

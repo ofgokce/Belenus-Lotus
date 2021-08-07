@@ -1,61 +1,66 @@
 //
-//  SeriesDetailViewController.swift
+//  MediaDetailViewController.swift
 //  Belenus Lotus
 //
-//  Created by Ömer Faruk Gökce on 28.05.2021.
+//  Created by Ömer Faruk Gökce on 1.06.2021.
 //
 
 import UIKit
 
-class SeriesDetailViewController: UIViewController, Instantiatable {
+class MediaDetailViewController: UIViewController, Instantiatable {
     
     @IBOutlet weak var backdropImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    private var id: Int!
-    
-    private var mediator = SeriesMediator()
     private var viewModel: ViewModel!
     
-    static func create(withId id: Int) -> SeriesDetailViewController {
-        let vc = SeriesDetailViewController.instantiate()
-        vc.id = id
+    static func create(withMovieId id: Int) -> MediaDetailViewController {
+        let vc = MediaDetailViewController.instantiate()
+        vc.viewModel = ViewModel(
+            withMovieId: id,
+            dataHandler: { [weak vc] in
+                vc?.setupDetails()
+                vc?.setupTableView()
+            }, errorHandler: { [weak vc] (error) in
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+                    vc?.present(alert, animated: true) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            vc?.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+        )
+        return vc
+    }
+    
+    static func create(withSeriesId id: Int) -> MediaDetailViewController {
+        let vc = MediaDetailViewController.instantiate()
+        vc.viewModel = ViewModel(
+            withSeriesId: id,
+            dataHandler: { [weak vc] in
+                vc?.setupDetails()
+                vc?.setupTableView()
+            }, errorHandler: { [weak vc] (error) in
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+                    vc?.present(alert, animated: true) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            vc?.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+        )
         return vc
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-    
-    private func setup() {
         setupNavBar()
-        
-        mediator.getSeries(withId: id) { [unowned self] (result) in
-            switch result {
-            case let .success(series):
-                viewModel = ViewModel(with: series)
-                mediator.setCollectionType(to: .recommended(forMovieWithId: id)) { (result) in
-                    switch result {
-                    case let .success(series):
-                        viewModel.updateRecommended(with: series)
-                    default: break
-                    }
-                    setupDetails()
-                    setupTableView()
-                }
-            case let .failure(error):
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
-                    alert.present(navigationController!, animated: true, completion: nil)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        navigationController?.popViewController(animated: true)
-                    }
-                }
-            }
-        }
     }
     
     private func setupNavBar() {
@@ -68,7 +73,7 @@ class SeriesDetailViewController: UIViewController, Instantiatable {
     
     private func setupDetails() {
         DispatchQueue.main.async { [unowned self] in
-            backdropImageView.kf.setImage(with: ImagesMediator().getBackdropUrl(for: viewModel.backdropPath))
+            backdropImageView.load(fromUrl: ImagesMediator().getBackdropUrl(for: viewModel.backdropPath))
             titleLabel.attributedText = viewModel.titleAttributed
             taglineLabel.text = viewModel.tagline
         }
@@ -84,11 +89,11 @@ class SeriesDetailViewController: UIViewController, Instantiatable {
     }
     
     private func navigateToSeries(withId id: Int) {
-        navigationController?.pushViewController(SeriesDetailViewController.create(withId: id), animated: true)
+//        navigationController?.pushViewController(MediaDetailViewController.create(withId: id), animated: true)
     }
 }
 
-extension SeriesDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.tableViewData.count
     }

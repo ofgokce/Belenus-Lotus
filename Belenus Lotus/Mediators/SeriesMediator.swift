@@ -11,8 +11,13 @@ class SeriesMediator: MediaCollectionMediator<Series> {
     
     private var series: Series?
     
-    func getSeries(withId id: Int, completion: @escaping (Result<Series, Error>) -> Void) {
-        self.fetchSeries(id, completion: completion)
+    override func getMedia(withId id: Int, completion: @escaping (Result<AnyMedia, Error>) -> Void) {
+        self.fetchSeries(id) { result in
+            switch result {
+            case .success(let series): completion(.success(series))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
     }
     private func fetchSeries(_ id: Int, completion: @escaping (Result<Series, Error>) -> Void) {
         TMDBManager.shared.request(.init(medium: .tv, request: .details(id: id))) { [self] (result: Result<Series, Error>) in
